@@ -1,0 +1,877 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+    box-sizing: border-box;
+    color: #fff;
+
+    ::selection {
+        color: #95c11e;
+        background-color: #fff;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: #95c11e;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        width: 10px;
+        border: 1.5px solid black;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+}
+
+/* Cusor-friend */
+#cursor-friend {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    /*making the circle nonClick able */
+    transform: translate(-50%,-50%);
+    /* to make the circle center in the pointer */
+    background-color: #95c11e;
+    z-index: 99;
+    position: fixed;
+}
+
+/* Cusor-BackGround blur shadow */
+#cursor-bg-blur {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #96c11e7d;
+    position: fixed;
+    filter: blur(60px);
+    z-index: 10;
+    /* transition: all 0.2s linear 0s; */
+}
+
+/* NAV-BAR */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 125px;
+    gap: 40px;
+    padding: 0 150px;
+    position: fixed;
+    z-index: 99;
+}
+
+.closebtn {
+    display: none;
+}
+
+.menu i {
+    display: none;
+}
+
+.ri-close-fill {
+    display: none;
+}
+
+
+.nav-item li {
+    display: inline;
+    list-style: none;
+    margin-right: 40px;
+}
+
+.nav-item a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+.nav-item a:hover {
+    color: #a4cd35;
+    transition-duration: 0.3s;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+main {
+    
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* PAGE 1 STYLING */
+.page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    z-index: 10;
+}
+
+.page1 h1 {
+    font-weight: 900;
+    margin-top: 80px;
+    font-size: 8.5vw;
+    position: relative;
+}
+
+.page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    top: -0.5vw;
+    left: -0.5vw;
+    -webkit-text-stroke: 1px #95c11e;
+    color: black;
+    z-index: -1;
+}
+
+.page1 h3 {
+    font-size: 2.5vw;
+    font-weight: 800;
+}
+
+.page1 p {
+    font-weight: 420;
+    font-size: 18px;
+    width: 50%;
+    line-height: 25px;
+}
+
+/* PAGE 2 STYLING */
+
+.page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+}
+#scroll-div{
+    width: 100%;
+    overflow-x: hidden;
+}
+#scroll-div::-webkit-scrollbar{
+    display: none;
+    
+}
+.text-scroll{
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollAnimation 25s linear 0s infinite;
+}
+.text-scroll span {
+    color: rgb(23, 21, 21);
+    font-family: "gilroy";
+    font-size: 100px;
+    font-weight: 900;
+    -webkit-text-stroke: 0.7px #fff;
+    /* text-shadow: 1px 1px #ffffff, -1px -1px #fff; */
+    margin-right: 40px;
+    transition: all 0.3s linear 0s;
+}
+
+.text-scroll span:hover {
+    color: #95c11e;
+    -webkit-text-stroke: unset;
+}
+@keyframes scrollAnimation {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-350%);
+    }
+}
+
+#about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+#about-section img {
+    height: 140px;
+    width: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.mobile {
+    display: none;
+}
+
+#about-section p {
+    width: 50vw;
+    text-align: center;
+    font-size: 19px;
+    line-height: 35px;
+    font-weight: 400;
+}
+
+#about-section h2 {
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#cards-container {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 120px;
+    position: relative;
+    z-index: 10;
+}
+
+
+#card-bgImage {
+    width: 13%;
+    height: fit-content;
+    object-fit: cover;
+    position: absolute;
+    left: 4rem;
+    top: -3rem;
+    z-index: -1;
+}
+
+.card {
+    background-color: rgb(32, 171, 206);
+    height: inherit;
+    width: 26%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: all ease 0.8s;
+}
+
+#card1 {
+    background-image: url(images/card1-image.avif);
+}
+
+#card2 {
+    background-image: url(images/card2-image.avif);
+}
+
+#card3 {
+    background-image: url(images/card3-image.avif);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #a4cd35;
+    padding: 2.2rem;
+    padding-top: 50px;
+    opacity: 0;
+    transition: all ease 0.8s;
+    overflow-y:auto;
+}
+.overlay::-webkit-scrollbar{
+    display: none;
+}
+
+.overlay h3 {
+    font-size: 31px;
+    font-weight: 850;
+    color: black;
+    text-transform: uppercase;
+}
+
+.overlay p {
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+    line-height: 26px;
+    margin: 15px 0px;
+}
+
+.card:hover {
+    transform: rotate3d(-1, 1, 0, 20deg);
+
+    .overlay {
+        opacity: 1;
+    }
+}
+
+#green-div {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #13a03a, #ade023);
+    margin-top: 80px;
+}
+
+#green-div h3 {
+    width: 40%;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 40px;
+    color: black;
+    text-align: center;
+}
+
+#green-div img {
+    height: 100%;
+    width: 13%;
+    object-fit: cover;
+}
+
+/* PAGE 3 STYLING */
+.page3 {
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page3 p {
+    font-size: 20px;
+    font-weight: 800;
+    width: 64%;
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+#left-quote {
+    position: absolute;
+    height: 40px;
+    object-fit: cover;
+    top: 20%;
+    left: 15%;
+}
+
+#right-quote {
+    position: absolute;
+    height: 40px;
+    object-fit: cover;
+    bottom: 20%;
+    right: 15%;
+}
+
+/* PAGE 4 STYLING */
+.page4 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+}
+
+/* FOOD SECTION */
+#food-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 350px;
+}
+
+#food-img {
+    height: 95%;
+    width: 35%;
+    border-radius: 10px;
+    animation-name: slideShow;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes slideShow {
+    from {
+        background-image: url(images/slideShowImg1.webp);
+        background-size: cover;
+    }
+
+    to {
+        background-image: url(images/slideShowImg2.webp);
+        background-size: cover;
+    }
+}
+
+#food-description {
+    height: 95%;
+    width: 40%;
+    text-align: left;
+    line-height: 30px;
+}
+
+#food-description h1 {
+    font-weight: 900;
+    font-size: 38px;
+}
+
+#food-description p {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+#food-description button {
+    margin-top: 15px;
+    width: 200px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #95c11e;
+    border-radius: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    transition: all 0.3s linear;
+}
+
+#food-description button:hover {
+    background-color: #95c11e;
+    color: black;
+}
+
+#three-box {
+    width: 85%;
+    height: 140px;
+    margin-left: 90px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#three-box-back-text {
+    width: 100%;
+    margin-top: 100px;
+    left: 82px;
+}
+
+#three-box-back-text h1 {
+    font-family: "gilroy";
+    height: 60px;
+    width: 100% ;
+    font-size: 6vw;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 1px #95c11e;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #95c11e;
+    position: relative;
+}
+
+.box h2 {
+    text-align: center;
+    padding-top: 55px;
+    color: black;
+    font-weight: 900;
+    font-size: 27px;
+}
+
+#box1:hover {
+    background-image: url(images/topTracer.avif);
+    background-size: cover;
+    transform: scale(0.96);
+    transition: all 0.4s linear;
+}
+
+#box1:hover h2 {
+    transition: all 0.15s linear;
+    color: #fff;
+}
+
+#box2:hover {
+    background-image: url(images/golfLesson.webp);
+    background-size: cover;
+    transform: scale(0.96);
+    transition: all 0.4s linear;
+}
+
+#box2:hover h2 {
+    transition: all 0.15s linear;
+    color: #fff;
+}
+
+#box3:hover {
+    background-image: url(images/advantureGolf.jpg);
+    background-size: cover;
+    transform: scale(0.96);
+    transition: all 0.4s linear;
+}
+
+#box3:hover h2 {
+    transition: all 0.15s linear;
+    color: #fff;
+}
+
+.page5 {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    z-index: 10;
+}
+
+#footer {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(to right top, #abde22 40%, #0a9e3bb9);
+}
+
+#footer-dot-img {
+    width: 20%;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+#footer-option {
+    width: 90%;
+    padding: 40px 0 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#options {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    line-height: 30px;
+}
+
+#options li {
+    list-style: none;
+    color: #000;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#options a {
+    text-decoration: none;
+    font-size: 23px;
+    color: #000;
+    font-weight: 900;
+    line-height: 40px;
+    transition: all 0.4s ease;
+}
+
+#options a:hover {
+    color: #fff;
+}
+
+#footer-copyRight p {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-weight: 500;
+    color: black;
+    font-size: 14px;
+}
+
+
+
+/* Responsivness for Mobiles devices */
+@media only screen and (max-width: 600px) {
+
+    #cursor-friend,
+    #cursor-bg-blur {
+        display: none;
+    }
+
+    .nav-item {
+        height: 50vh;
+        width: 70vw;
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        right: -75vw;
+        background-color: #a4cd35;
+        transition: 0.6s ease-in;
+        padding-top: 30px;
+    }
+
+
+    .nav-item a {
+        padding: 5px 5px 3px 30px;
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: #fff;
+        display: block;
+    }
+    .nav-item a:hover {
+        color: #000;
+        transition-duration: 0.3s;
+    }
+    .closebtn:focus{
+        transform: rotate(90deg);
+    }
+
+
+    .menu i {
+        display: block;
+        font-size: 8vw;
+        cursor: pointer;
+    }
+
+    .nav-bar {
+        height: 100px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 50vw;
+    }
+
+
+    video {
+        width: 100vw;
+    }
+
+    .page1 h1 {
+        font-size: 11vw;
+    }
+
+    .page1 h3 {
+        font-size: 4.6vw;
+    }
+
+    .page1 p {
+        font-size: 3.3vw;
+        width: 75%;
+        line-height: 18px;
+        font-weight: 340;
+    }
+
+    .text-scroll span {
+        font-size: 11vw;
+        font-weight: 900;
+        -webkit-text-stroke: 1.5px #ffffffd5;
+        margin-right: 30px;
+    }
+
+    #about-section {
+        flex-wrap: wrap;
+    }
+
+    #about-section p {
+        width: 90vw;
+        font-size: 5vw;
+        line-height: 30px;
+        font-weight: 350;
+    }
+
+    #about-section h2 {
+        margin: 20px 0 10px 0;
+    }
+
+    #about-section img {
+        width: 40vw;
+        height: 20vh;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .right-pic {
+        display: none;
+    }
+
+    #cards-container {
+        height: 115vh;
+        flex-wrap: wrap;
+        flex-flow: column;
+    }
+
+    .card {
+        height: 34vh;
+        width: 90vw;
+    }
+
+    .overlay {
+        padding-top: 10px;
+    }
+
+    .overlay h3 {
+        font-size: 1.5rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+        line-height: 22px;
+        margin: 10px 0px;
+    }
+
+    #green-div {
+        height: 20vh;
+        margin-top: 50px;
+    }
+
+    #green-div h3 {
+        width: 60%;
+        font-size: 4vw;
+        line-height: 25px;
+    }
+
+    .page3 {
+        height: 65vh;
+    }
+
+    .page3 p {
+        font-size: 4vw;
+        width: 76%;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    #left-quote {
+        top: 12%;
+        left: 8%;
+    }
+
+    #right-quote {
+        bottom: 18%;
+        right: 15%;
+    }
+
+    #food-section {
+        height: 80vh;
+        flex-direction: column;
+    }
+
+    #food-img {
+        height: 100%;
+        width: 85vw;
+    }
+
+    #food-description {
+        width: 88%;
+    }
+
+    #food-description h1 {
+        margin-top: 25px;
+        font-size: 6vw;
+    }
+
+    #food-description p {
+        margin-top: 10px;
+        font-weight: 350;
+    }
+
+    #three-box-back-text {
+        width: 100vw;
+    }
+
+    #three-box-back-text h1 {
+
+        height: 2vh;
+        font-size: 6.5vw;
+    }
+
+    #three-box {
+        width: 100vw;
+        height: 140px;
+        margin-left: 0px;
+        gap: 10px;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background-color: #95c11e;
+        position: relative;
+    }
+
+    .box h2 {
+        padding-top: 50px;
+        font-size: 5vw;
+    }
+
+    .page5 {
+        height: 80vh;
+        width: 100vw;
+    }
+
+    #footer {
+        height: 100%;
+        width: 100%;
+    }
+
+    #footer-option {
+        width: 100%;
+        gap: 4vh;
+        padding: 20px 0 0 12px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    #options {
+        gap: 0px;
+        line-height: 0px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    #options a,
+    #options>a:hover {
+        line-height: 30px;
+        transition: none;
+    }
+
+    .footer-li {
+        margin-top: 20px;
+    }
+
+    #footer-copyRight p {
+        margin: 20px 0 0 12px;
+        font-weight: 400;
+        line-height: 3vh;
+        color: black;
+        font-size: 3.69vw;
+    }
+
+    #footer-dot-img {
+        width: 100%;
+        z-index: -1;
+    }
+
+    .footer-logo img {
+        width: 40vw;
+        height: 12vh;
+        /* background-color: red; */
+    }
+}
