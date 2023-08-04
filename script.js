@@ -14,16 +14,14 @@ function myFunction(x) {
         document.addEventListener("DOMContentLoaded", function () {
             const sidebar = document.getElementsByClassName("nav-item")[0];
             const content = document.querySelector("main");
-            function closeSidebar() {
-                closeNav()
-            }
+            
             // Event listener for the content area
             content.addEventListener("click", function (event) {
                 const target = event.target;
-                console.log(target)
+                // console.log(target)
                 // Check if the clicked element is not part of the sidebar
                 if (target !== sidebar && !sidebar.contains(target)) {
-                    closeSidebar(); // Close the sidebar
+                    closeNav()    // Closing nav
                 }
             });
         });
